@@ -46,7 +46,7 @@ const renderProject = () => {
     document.getElementById("contents").innerHTML += `
     <div class="project-list-item">
         <div class="project-image">
-            <img src="/assests/images/Mobile-App-Statistics.jpg" alt="project image" style="width: 90%; border-radius: 15px;"/>
+            <img src="/assests/images/Mobile-App-Statistics.jpg" alt="project image" style="width: 100%; border-radius: 15px;"/>
         </div>
         <div class="project-content">
         <h1>
