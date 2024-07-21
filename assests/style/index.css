@@ -272,13 +272,14 @@ button:hover {
 /* content project */
 .project-list {
   margin: 20px;
+  display: flex;
 }
 
 .project-list-item {
   margin: 80px auto;
   border: 1px solid black;
   border-radius: 15px;
-  width: 40%;
+  width: 30%;
   text-align: center;
   display: block;
 }
