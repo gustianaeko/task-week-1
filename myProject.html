@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assests/style/index.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">
+          <ul>
+            <li>
+              <img
+                src="assests/images/dumbways.png"
+                alt="dumbwaysLogo"
+                class="logo"
+              />
+            </li>
+            <li class="home">
+              <a href="index.html"> Home </a>
+            </li>
+            <li class="myProject">
+              <a href="myProject.html"> My Project </a>
+            </li>
+          </ul>
+        </div>
+        <div class="right"><a href="contact.html">Contact Me</a></div>
+      </nav>
+    </header>
+    <main>
+      <div>
+        <h1>ADD MY PROJECT</h1>
+      </div>
+      <div>
+        <form onsubmit="addProject(event)">
+          <div>
+            <label for="inputProjectName">Project Name</label>
+            <input type="text" id="inputProjectName" />
+          </div>
+          <div>
+            <label for="startDate">Start Date</label>
+            <input type="text" id="startDate" />
+            <label for="endDate">End Date</label>
+            <input type="text" id="endDate" />
+          </div>
+          <div>
+            <label for="description">Description</label>
+            <textarea name="description" id="description"></textarea>
+          </div>
+          <div>
+            <label for="technologies">Technologies</label>
+            <!-- radio -->
+            <div class="radioBtn">
+              <input
+                type="radio"
+                id="nodeJS"
+                name="technologies"
+                value="nodeJS"
+              />
+              <label for="nodeJS">Node JS</label>
+              <input
+                type="radio"
+                id="nextJS"
+                name="technologies"
+                value="nextJS"
+              />
+              <label for="nextJS">Next JS</label>
+
+              <input
+                type="radio"
+                id="reactJS"
+                name="technologies"
+                value="reactJS"
+              />
+              <label for="reactJS">React JS</label>
+              <input
+                type="radio"
+                id="typeScript"
+                name="technologies"
+                value="typeScript"
+              />
+              <label for="typeScript">TypeScript</label>
+            </div>
+            <div>
+              <label for="uploadImg">Upload Image</label>
+              <input type="file" id="uploadImg" />
+            </div>
+          </div>
+          <button id="btn-submit-project">submit</button>
+        </form>
+
+        <hr class="line" />
+        <div>
+          <h1>MY PROJECT</h1>
+        </div>
+        <div id="contents" class="project-list">
+          <!-- dynamic content would be here -->
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="assests/js/project.js"></script>
+</html>
