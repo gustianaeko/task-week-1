@@ -273,15 +273,33 @@ button:hover {
 .project-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+
+  padding: 40px;
+  width: 90%;
+  margin: auto;
 }
 
 .project-list-item {
   flex: 1 0 30%;
-  border: 1px solid black;
-  margin: 1%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  box-shadow: 1px 1px 4px black;
+  margin: 30px 1%;
   border-radius: 15px;
 }
 
 .btn-group button {
-  margin-right: 10px;
+  float: right;
+  margin-right: 5px;
+}
+
+.project-content {
+  text-align: center;
+}
+
+.description {
+  text-align: justify;
+  padding: 10px;
 }

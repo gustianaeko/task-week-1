@@ -25,8 +25,8 @@ const addProject = (event) => {
 
   let project = {
     projectName,
-    startDate,
-    endDate,
+    startDate: new Date(startDate),
+    endDate: new Date(endDate),
     description,
     selectedValue,
     uploadImg,
@@ -39,28 +39,58 @@ const addProject = (event) => {
   renderProject();
 };
 
+const calculateDateDifference = () => {
+  const start = new Date(document.getElementById("startDate").value);
+  const end = new Date(document.getElementById("endDate").value);
+
+  const timeDifference = end - start; //ms
+  const daysDiffrence = timeDifference / (1000 * 60 * 60 * 24); //days
+
+  const startYear = start.getFullYear();
+  const startMonth = start.getMonth();
+  const endYear = end.getFullYear();
+  const endMonth = end.getMonth();
+
+  //montDifference
+  const yearDiff = endYear - startYear;
+  const monthDiff = endMonth - startMonth;
+
+  if (monthDiff < 0) {
+    yearDiff--;
+    monthDiff += 12;
+  }
+
+  return {
+    days: daysDiffrence,
+    months: monthDiff,
+    years: yearDiff,
+  };
+};
+
 const renderProject = () => {
   document.getElementById("contents").innerHTML = "";
 
   for (let i = 0; i < dataProjects.length; i++) {
     document.getElementById("contents").innerHTML += `
     <div class="project-list-item">
-        <div class="project-image">
-            <img src="/assests/images/Mobile-App-Statistics.jpg" alt="project image" style="width: 100%; border-radius: 15px;"/>
-        </div>
         <div class="project-content">
-        <h1>
-        <a href="projectDetail.html" target="_blank" style="text-decoration: none;">
-        ${dataProjects[i].projectName} - ${dataProjects[i].startDate}
-    </a>
-    </h1>
-    <p>durasi : ${
-      +dataProjects[i].endDate - +dataProjects[i].startDate
-    } bulan </p>
-                <div class="detailProjectContent"> 
-                20 July 2024 23:30 WIB | Eko Gustiana
+            <div class="headerContent"> 
+                <div class="project-image">
+                <img src="/assests/images/red.jpg" alt="project image" style="width: 100%; border-radius: 15px;"/>
                 </div>
-                <p> 
+                <h2>
+                  <a href="projectDetail.html" target="_blank" style="text-decoration: none;">${
+                    dataProjects[i].projectName
+                  } - ${dataProjects[i].startDate.getFullYear()}</a>
+                </h2>
+                <p>
+                  Uploaded : ${calculateDateDifference().days} Days ago
+                </p>
+            </div>
+            <div class="detailProjectContent"> 
+                20 July 2024 23:30 WIB | Eko Gustiana
+            </div>
+                <p class="description"> 
                 ${dataProjects[i].description}
                 </p>
             <div class="projectIcons"> 
@@ -68,11 +98,12 @@ const renderProject = () => {
                 <i class="fa-brands fa-js fa-lg" style="color: #63E6BE;"></i>
                 <i class="fa-brands fa-react fa-lg" style="color: #63E6BE;"></i>
                 <i class="fa-brands fa-vuejs fa-lg" style="color: #63E6BE;"></i>
-                </div>
-                <div class="btn-group">
-                    <button class="btn-edit"">Edit Post</button>
-                    <button class="btn-post">Delete Post</button>
-                </div>
+            </div>
+            <div class="btn-group">
+                <button class="btn-post">Delete Post</button>
+                <button class="btn-edit"">Edit Post</button>
+            </div>
+        </div>
     </div>
                 `;
   }
