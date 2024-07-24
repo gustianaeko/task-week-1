@@ -39,34 +39,6 @@ const addProject = (event) => {
   renderProject();
 };
 
-const calculateDateDifference = () => {
-  const start = new Date(document.getElementById("startDate").value);
-  const end = new Date(document.getElementById("endDate").value);
-
-  const timeDifference = end - start; //ms
-  const daysDiffrence = timeDifference / (1000 * 60 * 60 * 24); //days
-
-  const startYear = start.getFullYear();
-  const startMonth = start.getMonth();
-  const endYear = end.getFullYear();
-  const endMonth = end.getMonth();
-
-  //montDifference
-  const yearDiff = endYear - startYear;
-  const monthDiff = endMonth - startMonth;
-
-  if (monthDiff < 0) {
-    yearDiff--;
-    monthDiff += 12;
-  }
-
-  return {
-    days: daysDiffrence,
-    months: monthDiff,
-    years: yearDiff,
-  };
-};
-
 const renderProject = () => {
   document.getElementById("contents").innerHTML = "";
 
@@ -76,7 +48,7 @@ const renderProject = () => {
         <div class="project-content">
             <div class="headerContent"> 
                 <div class="project-image">
-                <img src="/assests/images/red.jpg" alt="project image" style="width: 100%; border-radius: 15px;"/>
+                <img src="/assests/images/Mobile-App-Statistics.jpg" alt="project image" style="width: 100%; border-radius: 15px;"/>
                 </div>
                 <h2>
                   <a href="projectDetail.html" target="_blank" style="text-decoration: none;">${
@@ -84,11 +56,11 @@ const renderProject = () => {
                   } - ${dataProjects[i].startDate.getFullYear()}</a>
                 </h2>
                 <p>
-                  Uploaded : ${calculateDateDifference().days} Days ago
+                  Duration : ${getDistanceTime(dataProjects[i].startDate)} 
                 </p>
             </div>
             <div class="detailProjectContent"> 
-                20 July 2024 23:30 WIB | Eko Gustiana
+                ${getFullDate(dataProjects[i].startDate)} | Eko Gustiana
             </div>
                 <p class="description"> 
                 ${dataProjects[i].description}
@@ -106,5 +78,61 @@ const renderProject = () => {
         </div>
     </div>
                 `;
+  }
+};
+
+const getFullDate = (time) => {
+  const nameOfMonth = [
+    "Januari",
+    "Februari",
+    "Maret",
+    "April",
+    "Mei",
+    "Juni",
+    "Juli",
+    "Agustus",
+    "September",
+    "Oktober",
+    "November",
+    "Desember",
+  ];
+
+  const date = time.getDate();
+  const month = nameOfMonth[time.getMonth()];
+  const year = time.getFullYear();
+
+  const hour = time.getHours();
+  const minute = time.getMinutes();
+
+  return `${date} ${month} ${year} - ${hour}:${minute} WIB`;
+};
+
+const getDistanceTime = (time) => {
+  const postedAt = time;
+  const currentTime = new Date();
+
+  const distanceTime = currentTime - postedAt;
+
+  const miliSecond = 1000;
+  const secondInHour = 3600;
+  const hourInDay = 24;
+
+  const distanceTimeInSecond = Math.floor(distanceTime / miliSecond);
+  const distanceTimeInMinute = Math.floor(distanceTime / (miliSecond * 60));
+  const distanceTimeInHour = Math.floor(
+    distanceTime / (miliSecond * secondInHour)
+  );
+  const distanceTimeInDay = Math.floor(
+    distanceTime / (miliSecond * secondInHour * hourInDay)
+  );
+
+  if (distanceTimeInDay > 0) {
+    return `${distanceTimeInDay} days`;
+  } else if (distanceTimeInHour > 0) {
+    return `${distanceTimeInHour} hours`;
+  } else if (distanceTimeInMinute > 0) {
+    return `${distanceTimeInMinute} minutes`;
+  } else {
+    return `${distanceTimeInSecond} seconds`;
   }
 };
