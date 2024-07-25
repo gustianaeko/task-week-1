@@ -36,6 +36,7 @@ nav .left ul .home {
 nav .left ul .myProject a {
   font-weight: 85;
   text-decoration: none;
+  color: black;
 }
 
 nav .left ul li {
@@ -59,4 +60,18 @@ nav .left ul li {
 .right a:hover {
   background-color: rgb(255, 166, 0);
   transition: 0.5;
+}
+
+/* hamburger */
+#btn-Hamburger {
+  background-color: rgba(225, 232, 235, 0.658);
+  border: none;
+  border-radius: none;
+  box-shadow: none;
+  color: black;
+  font-size: larger;
+}
+
+.hide {
+  display: none !important;
 }

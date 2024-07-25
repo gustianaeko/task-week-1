@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Website</title>
     <link rel="stylesheet" href="assests/style/navbar.css" />
+    <link rel="stylesheet" href="assests/style/navbarResponsive.css" />
     <link rel="stylesheet" href="assests/style/index.css" />
     <link rel="stylesheet" href="assests/style/indexResponsive.css" />
     <link
@@ -36,8 +37,24 @@
               </li>
             </ul>
           </div>
-          <div class="right"><a href="contact.html">Contact Me</a></div>
+          <div class="right">
+            <div>
+              <a href="contact.html">Contact Me</a>
+            </div>
+            <div>
+              <button id="btn-Hamburger" onclick="toggleHamburger()">
+                <i class="fa-solid fa-bars fa-lg" style="color: #110d0d"></i>
+              </button>
+            </div>
+          </div>
         </nav>
+        <div class="hamburger hide">
+          <ul>
+            <li id="logoHam">Home</li>
+            <li id="myProjectHam">My Project</li>
+            <li id="contactMeHam">Contact Me</li>
+          </ul>
+        </div>
       </header>
       <main>
         <div class="mainContent">
@@ -94,8 +111,8 @@
               />
 
               <div>
-                <h1>Eko Gustiana</h1>
-                <h3>Fullstack Developer</h3>
+                <h1 id="profileH1">Eko Gustiana</h1>
+                <h3 id="profileH3">Fullstack Developer</h3>
               </div>
             </div>
           </div>
@@ -104,4 +121,5 @@
     </div>
   </body>
   <script src="assests/js/index.js"></script>
+  <script src="assests/js/nav.js"></script>
 </html>

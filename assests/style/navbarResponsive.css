@@ -1,0 +1,92 @@
+@media only screen and (max-width: 652px) {
+  .home a {
+    display: none;
+  }
+
+  .myProject a {
+    display: none;
+  }
+
+  .right a {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 653px) {
+  #btn-Hamburger {
+    display: none;
+  }
+
+  #btn-Hamburger:hover {
+    background-color: rgb(255, 166, 0);
+    transition: 0.5;
+  }
+}
+
+@media only screen and (min-width: 401px) {
+  .hamburger ul {
+    list-style: none;
+    text-align: center;
+    margin: 6px auto;
+    width: auto;
+    font-size: large;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .right {
+    margin: 0;
+    float: right;
+  }
+
+  .right a {
+    background-color: rgb(14, 13, 13);
+    text-decoration: none;
+    color: white;
+    border-radius: 15px;
+  }
+
+  nav .left ul .logo {
+    width: 40px;
+    float: left;
+  }
+
+  #btn-Hamburger {
+    background-color: rgba(225, 232, 235, 0.658);
+    border: none;
+    border-radius: none;
+    box-shadow: none;
+    color: black;
+    font-size: medium;
+  }
+
+  .hamburger ul {
+    list-style: none;
+    text-align: center;
+    margin: 10px auto;
+    width: auto;
+    font-size: medium;
+    font-weight: 550;
+    /* background-color: red; */
+    line-height: 2;
+  }
+}
+
+#contactMeHam {
+  text-align: center;
+  margin: 6px auto;
+  width: 35%;
+  font-size: medium;
+  font-weight: 550;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 1px 2px;
+  background-color: black;
+  color: white;
+}
+
+#contactMeHam:hover {
+  background-color: rgb(255, 166, 0);
+  transition: 0.5;
+}
