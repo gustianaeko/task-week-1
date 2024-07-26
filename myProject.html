@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="assests/style/index.css" />
     <link rel="stylesheet" href="assests/style/project.css" />
     <link rel="stylesheet" href="assests/style/contact.css" />
+    <link rel="stylesheet" href="assests/style/myProjectResponsive.css" />
+    <link rel="stylesheet" href="assests/style/navbarResponsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
@@ -29,8 +38,35 @@
             </li>
           </ul>
         </div>
-        <div class="right"><a href="contact.html">Contact Me</a></div>
+        <div class="right">
+          <a href="contact.html">Contact Me</a>
+          <div class="navHam">
+            <button id="btn-Hamburger" onclick="toggleHamburger()">
+              <i class="fa-solid fa-bars fa-lg" style="color: #110d0d"></i>
+            </button>
+          </div>
+        </div>
       </nav>
+
+      <div class="hamburger hide">
+        <ul>
+          <li id="logoHam">
+            <a href="index.html" style="text-decoration: none; color: black"
+              >Home</a
+            >
+          </li>
+          <li id="myProjectHam">
+            <a href="myProject.html" style="text-decoration: none; color: black"
+              >My Project</a
+            >
+          </li>
+          <li id="contactMeHam">
+            <a href="contact.html" style="text-decoration: none; color: white"
+              >Contact Me</a
+            >
+          </li>
+        </ul>
+      </div>
     </header>
     <main>
       <div>
@@ -52,7 +88,7 @@
             <label for="description">Description</label>
             <textarea name="description" id="description"></textarea>
           </div>
-          <div>
+          <div class="technologies">
             <label for="technologies">Technologies</label>
             <!-- radio -->
             <div class="radioBtn">
@@ -107,4 +143,5 @@
     </main>
   </body>
   <script src="assests/js/project.js"></script>
+  <script src="assests/js/nav.js"></script>
 </html>

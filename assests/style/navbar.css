@@ -45,16 +45,13 @@ nav .left ul li {
 
 /* navbar Right */
 
-.right {
-  margin: 5px;
-}
-
 .right a {
   background-color: rgb(14, 13, 13);
   text-decoration: none;
   color: white;
   padding: 5px 16px;
   border-radius: 15px;
+  float: right;
 }
 
 .right a:hover {

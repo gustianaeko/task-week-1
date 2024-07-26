@@ -3,7 +3,7 @@
   display: flex;
   margin: 20px 0;
   padding: 10px;
-  width: 90%;
+  width: 80%;
 }
 
 #nodeJS,
@@ -15,6 +15,7 @@
 
 #btn-submit-project {
   margin-bottom: 70px;
+  float: right;
 }
 
 .line {
@@ -47,13 +48,13 @@
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   box-shadow: 1px 1px 4px black;
-  margin: 30px 1%;
+  margin: 25px 1%;
   border-radius: 15px;
 }
 
 .btn-group button {
-  float: right;
   margin-right: 5px;
+  float: right;
 }
 
 .project-content {
@@ -79,4 +80,10 @@ input[type="file"]::file-selector-button {
 
 input[type="file"]::file-selector-button:hover {
   background: orange;
+}
+
+/* technologies */
+
+.technologies button {
+  float: right;
 }
