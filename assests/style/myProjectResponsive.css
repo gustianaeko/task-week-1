@@ -34,13 +34,13 @@
     width: auto;
   }
 
-  nav .left ul .logo {
+  .left .logo {
     width: 40px;
-    margin: 0 8px;
+    margin: 2px 20px;
   }
 
   #btn-Hamburger {
-    margin: 0px 50px;
+    margin: 2px 20px;
   }
 }
 

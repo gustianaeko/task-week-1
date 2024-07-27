@@ -184,6 +184,16 @@
   }
 }
 
+@media only screen and (max-width: 653px) {
+  #btn-Hamburger {
+    margin: 2px 20px;
+  }
+
+  .left .logo {
+    margin: 2px 20px;
+  }
+}
+
 @media only screen and (max-width: 595px) {
   h1 {
     font-size: x-large;
