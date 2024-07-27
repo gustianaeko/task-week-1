@@ -40,7 +40,7 @@ const testimonial4 = new Testimonial(
 
 const testimonial5 = new Testimonial(
   "https://api.duniagames.co.id/api/content/upload/file/601951691711190152.jpg",
-  "Keren bange abang ini!",
+  "Keren banget abang ini!",
   "Voni"
 );
 

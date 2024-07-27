@@ -1,3 +1,17 @@
+@media only screen and (max-width: 901px) {
+  .home a {
+    display: none;
+  }
+
+  .myProject a {
+    display: none;
+  }
+
+  .nav .left ul li .testimonial {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 652px) {
   nav {
     display: flex;
@@ -12,6 +26,10 @@
   }
 
   .myProject a {
+    display: none;
+  }
+
+  .nav .left ul .testimonial {
     display: none;
   }
 
